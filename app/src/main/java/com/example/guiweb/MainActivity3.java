@@ -7,12 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,9 +20,9 @@ public class MainActivity3 extends AppCompatActivity {
     Button button2, bt3;
 
     private TextView textView, tv1, tv2, tv3, tv4;
-    private DatabaseReference databaseReference;
+
     private DatabaseReference mDatabase;
-    private DatabaseReference Sp1, Sp2, Sp3, Sp4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +39,9 @@ public class MainActivity3 extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("Laysp").setValue("");
-        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        Sp1 = FirebaseDatabase.getInstance().getReference("Sp1");
-        Sp2 = FirebaseDatabase.getInstance().getReference("Sp2");
-        Sp3 = FirebaseDatabase.getInstance().getReference("Sp3");
-        Sp4 = FirebaseDatabase.getInstance().getReference("Sp4");
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,46 +64,7 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
-        Sp1.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    Object obj = task.getResult().getValue();
-                    tv1.setText("Sp1 trong kho còn: "+obj.toString());
 
-                }
-            }
-        });
-        Sp2.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    Object obj = task.getResult().getValue();
-                    tv2.setText("Sp2 trong kho còn: "+obj.toString());
-
-                }
-            }
-        });
-        Sp3.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    Object obj = task.getResult().getValue();
-                    tv3.setText("Sp3 trong kho còn: "+obj.toString());
-
-                }
-            }
-        });
-        Sp4.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    Object obj = task.getResult().getValue();
-                    tv4.setText("Sp4 trong kho còn: "+obj.toString());
-
-                }
-            }
-        });
 
     }
 

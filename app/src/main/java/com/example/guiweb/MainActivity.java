@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt3, bt4, bt5;
+    Button bt3, bt4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bt3 = findViewById(R.id.bt3);
         bt4 = findViewById(R.id.bt4);
-        bt5 = findViewById(R.id.bt5);
+
     bt3.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -30,13 +30,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i3 = new Intent(MainActivity.this,MainActivity4.class);
                 startActivity(i3);
-            }
-        });
-        bt5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i2 = new Intent(MainActivity.this,MainActivity6.class);
-                startActivity(i2);
             }
         });
 
