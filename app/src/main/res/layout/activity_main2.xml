@@ -10,12 +10,14 @@
         android:id="@+id/bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bt3"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="479dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="197dp"
         android:text="Quet ma" />
 
     <TextView
@@ -25,75 +27,25 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="233dp"
-        android:layout_marginEnd="112dp"
-        android:text="Chưa chọn sản phẩm"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="111dp"
+        android:text="Vui lòng quét mã"
         android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/bt3"
-        android:layout_width="180dp"
-        android:layout_height="77dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="53dp"
-        android:text="Su dung giong noi" />
-
     <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvmk"
+        android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="660dp"
-        android:text="Sản phẩm 1"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="591dp"
-        android:text="Sản phẩm 2"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginEnd="94dp"
-        android:layout_marginBottom="661dp"
-        android:text="Sản phẩm 3"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/tv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginEnd="94dp"
-        android:layout_marginBottom="592dp"
-        android:text="Sản phẩm 4"
-        android:textSize="15dp" />
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="455dp"
+        android:text="Nhận mật khẩu của bạn tại đây" />
 
 
 </RelativeLayout>
