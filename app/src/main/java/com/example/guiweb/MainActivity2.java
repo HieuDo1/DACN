@@ -1,6 +1,8 @@
 package com.example.guiweb;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
     private Button bt;
     TextView tv, tvmk;
 
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,20 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         bt = findViewById(R.id.bt);
+
         tv = findViewById(R.id.tv);
         tvmk = findViewById(R.id.tvmk);
 
+        sharedPref = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+
+        String savedPassword = sharedPref.getString("Mat khau", "");
+        String savedQrValue = sharedPref.getString("Kho", "");
+        if (!savedPassword.isEmpty()) {
+            tv.setText("Đồ của bạn đã được lưu vào kho: "+savedQrValue);
+        }
+        if (!savedQrValue.isEmpty()) {
+            tvmk.setText("Mật khẩu của bạn là: "+savedPassword);
+        }
         bt .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +57,7 @@ public class MainActivity2 extends AppCompatActivity {
                 startQRScan();
             }
         });
+
     }
 
     private void startQRScan() {
@@ -86,6 +101,10 @@ public class MainActivity2 extends AppCompatActivity {
                 // Hiển thị thông báo thành công
                 Toast.makeText(this, "Mã QR đã được quét và lưu vào Firebase.", Toast.LENGTH_SHORT).show();
 
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("Mat khau", randomPassword);
+                editor.putString("Kho", qrValue);
+                editor.apply();
             }
         }
     }
