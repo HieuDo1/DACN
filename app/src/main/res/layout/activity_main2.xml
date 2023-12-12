@@ -4,51 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nen"
     tools:context=".MainActivity2">
 
     <Button
         android:id="@+id/bt"
+        style="@style/Button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="53dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="479dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="197dp"
-        android:text="Quet ma" />
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="519dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="159dp"
+        android:text="Quét mã"
+
+        />
 
     <TextView
         android:id="@+id/tv"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        style="@style/Edit_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="108dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="111dp"
-
-        android:textStyle="bold"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="68dp"
         android:text="Vui lòng quét mã"
-        android:textSize="20dp" />
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvmk"
-        android:layout_width="312dp"
-        android:layout_height="45dp"
+        style="@style/Edit_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="97dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="238dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="448dp"
-        android:text="Nhận mật khẩu của bạn tại đây"
-        android:textSize="20sp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="344dp"
+        android:text="Nhận mật khẩu của bạn"
+
+        android:textAlignment="center"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
 

@@ -1,152 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/nen"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:layout_width="378dp"
+            android:layout_height="609dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/container_user"
+            android:layout_gravity="center">
 
-    <TableLayout
-        android:layout_width="378dp"
-        android:layout_height="509dp"
-        android:layout_centerInParent="true">
+            <TableRow>
 
-        <TableRow>
+                <TextView
+                    android:layout_width="137dp"
+                    android:layout_height="47dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Số thứ tự"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="137dp"
-                android:layout_height="47dp"
-                android:layout_marginBottom="30dp"
-                android:text="Số thứ tự"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="126dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+                    android:text="Kho"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="126dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="30dp"
-                android:text="Kho"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+                    android:text="Lấy đồ"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="30dp"
-                android:text="Lấy đồ"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
+            <TableRow android:layout_height="wrap_content">
 
-        <TableRow android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="1"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Kho 1"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Kho 1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Lấy đồ"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Lấy đồ"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
+            <TableRow>
 
-        <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="2"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Kho 2"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Kho 2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Lấy đồ"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Lấy đồ"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
+            <TableRow>
 
-        <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="3"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="3"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Kho 3"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Kho 3"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Lấy đồ"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Lấy đồ"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
+            <TableRow>
 
-        <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="4"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="4"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Kho 4"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Kho 4"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Lấy đồ"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Lấy đồ"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-    </TableLayout>
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>

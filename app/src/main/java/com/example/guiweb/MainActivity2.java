@@ -42,10 +42,10 @@ public class MainActivity2 extends AppCompatActivity {
         String savedPassword = sharedPref.getString("Mat khau", "");
         String savedQrValue = sharedPref.getString("Kho", "");
         if (!savedPassword.isEmpty()) {
-            tv.setText("Đồ của bạn đã được lưu vào kho: "+savedQrValue);
+            tv.setText("Đồ của bạn ở "+savedQrValue);
         }
         if (!savedQrValue.isEmpty()) {
-            tvmk.setText("Mật khẩu của bạn là: "+savedPassword);
+            tvmk.setText("Mật khẩu của bạn: \n"+savedPassword);
         }
         bt .setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,14 +77,12 @@ public class MainActivity2 extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() != null) {
                 String qrValue = result.getContents();
-                tv.setText("Đồ của bạn đã được lưu vào kho "+qrValue);
                 // Lưu giá trị mã QR vào Firebase
                 saveQRValueToFirebase(qrValue);
 
                 // Tạo mật khẩu ngẫu nhiên
                 String randomPassword = generateRandomPassword();
 
-                tvmk.setText("Mật khẩu của bạn là: "+randomPassword);
                 // Lưu mật khẩu vào Firebase tương ứng với giá trị mã QR
                 if (qrValue.equals("kho 1")) {
                     savePasswordToFirebase("matkhaukho1", randomPassword);
