@@ -1,87 +1,142 @@
 package com.example.guiweb;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.ToggleButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt3, bt4;
-    ImageView goihang, tay2;
+    private ToggleButton lightToggleButton;
+    private ImageButton rotateImageButton;
+    private Animation rotateAnimation;
+    private boolean isRotating = false;
 
+    private TextView gasTextView;
+    private TextView temperatureTextView;
+    private DatabaseReference temperatureRef;
+    private DatabaseReference gasRef;
+    private ImageView maysayImageView;
+    private ImageView bomImageView;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        bt3 = findViewById(R.id.bt3);
-        bt4 = findViewById(R.id.bt4);
-        goihang = findViewById(R.id.goihang);
-        tay2 = findViewById(R.id.tay2);
 
+        lightToggleButton = findViewById(R.id.lightToggleButton);
+        rotateImageButton = findViewById(R.id.rotateImageButton);
+        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_animation);
 
-        Animation flyin = AnimationUtils.loadAnimation(this, R.anim.fly_in_from_left);
-        flyin.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                // Được gọi khi hiệu ứng bắt đầu
-            }
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                // Được gọi khi hiệu ứng kết thúc
-                goihang.startAnimation(flyin); // Lặp lại hiệu ứng
-            }
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                // Được gọi khi hiệu ứng được lặp lại (không được sử dụng trong trường hợp này)
-            }
-        });
-        goihang.startAnimation(flyin); // Bắt đầu hiệu ứng
+        gasTextView = findViewById(R.id.gasTextView);
+        temperatureTextView = findViewById(R.id.temperatureTextView);
+        maysayImageView = findViewById(R.id.maysayImageView);
+        bomImageView = findViewById(R.id.bomImageView);
 
+        temperatureRef = FirebaseDatabase.getInstance().getReference().child("NhietDo");
+        gasRef = FirebaseDatabase.getInstance().getReference().child("KhiGas");
 
-        Animation flyin2 = AnimationUtils.loadAnimation(this, R.anim.fly_in_from_right);
-        flyin2.setAnimationListener(new Animation.AnimationListener() {
+        temperatureRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onAnimationStart(Animation animation) {
-                // Được gọi khi hiệu ứng bắt đầu
-            }
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                // Được gọi khi hiệu ứng kết thúc
-                tay2.startAnimation(flyin2); // Lặp lại hiệu ứng
-            }
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-                // Được gọi khi hiệu ứng được lặp lại (không được sử dụng trong trường hợp này)
-            }
-        });
-        tay2.startAnimation(flyin2); // Bắt đầu hiệu ứng
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String temperature = dataSnapshot.getValue(String.class);
+                    temperatureTextView.setText("Nhiệt độ: " + temperature + "°C");
 
+                    // Kiểm tra điều kiện nhiệt độ để gửi thông báo
+                    if (Integer.parseInt(temperature) > 30) {
+                        // Ghi dữ liệu vào Realtime Database
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("MayLanh");
+                        databaseReference.setValue("Bat");
+                        maysayImageView.setVisibility(View.VISIBLE);
+                    } else {
+                        // Ghi dữ liệu vào Realtime Database
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("MayLanh");
+                        databaseReference.setValue("Tat");
+                        maysayImageView.setVisibility(View.GONE);
+                    }
+                }
+            }
 
-    bt3.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent i2 = new Intent(MainActivity.this,MainActivity2.class);
-            startActivity(i2);
-        }
-    });
-        bt4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i3 = new Intent(MainActivity.this,MainActivity4.class);
-                startActivity(i3);
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Xử lý lỗi khi đọc dữ liệu từ Firebase
             }
         });
 
+        gasRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String gas = dataSnapshot.getValue(String.class);
+                    gasTextView.setText("Khí gas: " + gas);
+
+                    // Kiểm tra điều kiện khí gas để gửi thông báo
+                    if (Integer.parseInt(gas) > 2000) {
+                        // Ghi dữ liệu vào Realtime Database
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("MayBomChay");
+                        databaseReference.setValue("Bat");
+                        bomImageView.setVisibility(View.VISIBLE);
+                    } else {
+                        // Ghi dữ liệu vào Realtime Database
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("MayBomChay");
+                        databaseReference.setValue("Tat");
+                        bomImageView.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Xử lý lỗi khi đọc dữ liệu từ Firebase
+            }
+        });
     }
 
+    public void toggleLight(View view) {
+        boolean isChecked = lightToggleButton.isChecked();
+        int thumbTint = isChecked ? R.color.green : R.color.gray;
+        lightToggleButton.setButtonTintList(getResources().getColorStateList(thumbTint));
+
+        // Ghi dữ liệu vào Realtime Database
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Den");
+        if (isChecked) {
+            databaseReference.setValue("Bat");
+        } else {
+            databaseReference.setValue("Tat");
+        }
+    }
+
+    public void rotateImage(View view) {
+        if (isRotating) {
+            rotateImageButton.clearAnimation();
+            isRotating = false;
+
+            // Ghi dữ liệu vào Realtime Database
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Quat");
+            databaseReference.setValue("Tat");
+        } else {
+            rotateImageButton.startAnimation(rotateAnimation);
+            isRotating = true;
+
+            // Ghi dữ liệu vào Realtime Database
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Quat");
+            databaseReference.setValue("Bat");
+        }
+    }
 }

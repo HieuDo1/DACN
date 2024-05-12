@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nen">
+    android:background="@color/gray">
 
 
     <ImageView
@@ -29,7 +29,7 @@
         android:layout_marginTop="381dp"
         android:layout_marginEnd="163dp"
         android:layout_marginBottom="235dp"
-        app:srcCompat="@drawable/anh2" />
+        app:srcCompat="@drawable/fan" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,9 +39,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="116dp"
-        android:text="CHÀO MỪNG BẠN ĐẾN VỚI TỦ GỬI ĐỒ"
+        android:text="CHÀO MỪNG BẠN ĐẾN NHÀ THÔNG MINH"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="25dp"
 
         android:textStyle="bold" />
 
