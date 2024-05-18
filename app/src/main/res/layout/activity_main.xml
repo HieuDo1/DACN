@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -17,15 +18,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lightToggleButton" />
+        app:layout_constraintTop_toBottomOf="@+id/lightToggleButton1"
+        app:layout_constraintVertical_bias="0.616" />
 
     <ToggleButton
-        android:id="@+id/lightToggleButton"
+        android:id="@+id/lightToggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/toggle_button_selector"
         android:checked="false"
-        android:onClick="toggleLight"
+        android:onClick="toggleLight1"
 
         android:textOff="Off"
         android:textOn="On"
@@ -34,43 +36,65 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.411"
+        app:layout_constraintVertical_bias="0.308"
+        tools:ignore="MissingConstraints" />
+
+    <ToggleButton
+        android:id="@+id/lightToggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toggle_button_selector"
+        android:checked="false"
+        android:onClick="toggleLight2"
+        android:textOff="Off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/gasTextView"
-        android:layout_width="177dp"
-        android:layout_height="69dp"
+        style="@style/Edit_Text"
+        android:layout_width="148dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
-        style="@style/Edit_Text"
+        app:layout_constraintVertical_bias="0.06"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/temperatureTextView"
-        android:layout_width="177dp"
-        android:layout_height="73dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gasTextView"
-        app:layout_constraintVertical_bias="0.086"
         style="@style/Edit_Text"
+        android:layout_width="140dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/maysayImageView"
-        android:layout_width="142dp"
-        android:layout_height="79dp"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintVertical_bias="0.552"
         app:srcCompat="@drawable/maysay" />
 
     <ImageView
@@ -80,10 +104,10 @@
         android:src="@drawable/bom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483"
+        app:layout_constraintVertical_bias="0.552"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
