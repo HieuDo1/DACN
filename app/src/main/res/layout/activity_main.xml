@@ -1,121 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nen"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/bt3"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="247dp"
-        android:layout_marginEnd="36dp"
+    <ImageButton
+        android:id="@+id/rotateImageButton"
+        android:layout_width="265dp"
+        android:layout_height="260dp"
+        android:background="@android:color/transparent"
+        android:onClick="rotateImage"
+        android:src="@drawable/fan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lightToggleButton1"
+        app:layout_constraintVertical_bias="0.616" />
 
-        android:text="Gửi đồ của bạn " />
-
-    <Button
-        android:id="@+id/bt4"
-        style="@style/Button"
+    <ToggleButton
+        android:id="@+id/lightToggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="510dp"
+        android:background="@drawable/toggle_button_selector"
+        android:checked="false"
+        android:onClick="toggleLight1"
 
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="142dp"
-        android:text="Lấy đồ của bạn " />
+        android:textOff="Off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/goihang"
-        android:layout_width="91dp"
-        android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="257dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="399dp"
-        app:srcCompat="@drawable/goihang" />
+    <ToggleButton
+        android:id="@+id/lightToggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toggle_button_selector"
+        android:checked="false"
+        android:onClick="toggleLight2"
+        android:textOff="Off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/tay1"
-        android:layout_width="91dp"
-        android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="259dp"
-        android:layout_marginBottom="335dp"
+    <TextView
+        android:id="@+id/gasTextView"
+        style="@style/Edit_Text"
+        android:layout_width="148dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06"
+        tools:ignore="MissingConstraints" />
 
-        app:srcCompat="@drawable/tay1" />
+    <TextView
+        android:id="@+id/temperatureTextView"
+        style="@style/Edit_Text"
+        android:layout_width="140dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="parent"
 
-    <ImageView
-        android:id="@+id/tay2"
-        android:layout_width="91dp"
-        android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="461dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="195dp"
-        app:srcCompat="@drawable/tay2" />
+        app:layout_constraintEnd_toEndOf="parent"
 
-    <ImageView
-        android:id="@+id/goihang2"
-        android:layout_width="91dp"
-        android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="247dp"
-        android:layout_marginTop="532dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="124dp"
-
-        app:srcCompat="@drawable/goihang" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="128dp"
-        android:layout_height="220dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="283dp"
-        app:srcCompat="@drawable/topicon" />
+        android:id="@+id/maysayImageView"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.552"
+        app:srcCompat="@drawable/maysay" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="122dp"
-        android:layout_height="165dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="175dp"
-        app:srcCompat="@drawable/topicon2" />
+        android:id="@+id/bomImageView"
+        android:layout_width="78dp"
+        android:layout_height="51dp"
+        android:src="@drawable/bom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.552"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="121dp"
-        android:layout_height="115dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="68dp"
-        app:srcCompat="@drawable/topicon2" />
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
